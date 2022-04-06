@@ -59,10 +59,7 @@ def update(bboxes, image):
 
     if len(bboxes) > 0:
         for x1, y1, x2, y2, lbl, conf in bboxes:
-            obj = [
-                int((x1 + x2) * 0.5), int((y1 + y2) * 0.5),
-                x2 - x1, y2 - y1
-            ]
+            obj = [int((x1 + x2) * 0.5), int((y1 + y2) * 0.5),x2 - x1, y2 - y1]  # x, y ，宽度，高度
             bbox_xywh.append(obj)
             confs.append(conf)
 

@@ -14,7 +14,7 @@ class Detector:
         self.threshold = 0.3
         self.stride = 1
 
-        self.weights = './weights/yolov5m.pt'
+        self.weights = './weights/yolov5n.pt'
 
         self.device = '0' if torch.cuda.is_available() else 'cpu'
         self.device = select_device(self.device)
@@ -23,8 +23,7 @@ class Detector:
         model.half()
 
         self.m = model
-        self.names = model.module.names if hasattr(
-            model, 'module') else model.names
+        self.names = model.module.names if hasattr(model, 'module') else model.names
 
     def preprocess(self, img):
 
@@ -52,14 +51,12 @@ class Detector:
         for det in pred:
 
             if det is not None and len(det):
-                det[:, :4] = scale_coords(
-                    img.shape[2:], det[:, :4], im0.shape).round()
+                det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
 
                 for *x, conf, cls_id in det:
                     lbl = self.names[int(cls_id)]
-                    if lbl not in ['person', 'bicycle', 'car', 'motorcycle', 'bus', 'truck']:
+                    if lbl not in ['person']:  # , 'bicycle', 'car', 'motorcycle', 'bus', 'truck'
                         continue
-                    pass
                     x1, y1 = int(x[0]), int(x[1])
                     x2, y2 = int(x[2]), int(x[3])
                     boxes.append(
