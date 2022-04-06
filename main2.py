@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/python
+# -- coding:utf-8 --
 """
 @Time ： 2022/4/4 20:35
 @Auth ： Yan Zeyu
@@ -40,9 +41,9 @@ if __name__ == '__main__':
         counter += 1  # 计算帧数
         if (time.time() - start_time) != 0:  # 实时显示帧数
             cv2.putText(im, "FPS {0}".format(float('%.1f' % (counter / (time.time() - start_time)))), (500, 50),
-                        cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255),3)
+                        cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 3)
         # cv2.imshow('demo', output_image_frame)
-        cv2.imshow('demo',im)
+        cv2.imshow('demo', im)
         cv2.waitKey(1)
     capture.release()
     cv2.destroyAllWindows()
