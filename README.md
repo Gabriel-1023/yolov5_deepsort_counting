@@ -1,5 +1,5 @@
 # yolov5 deepsort 行人 车辆 跟踪 检测 计数
-这是新分支sss
+这是原分支
 - 实现了 出/入 分别计数。
 - 显示检测类别。
 - 默认是 南/北 方向检测，若要检测不同位置和方向，可在 main.py 文件第13行和21行，修改2个polygon的点。
@@ -72,7 +72,7 @@ bilibili
 8. 在 main.py 文件中第66行，设置要检测的视频文件路径，默认为 './video/test.mp4'
 
     > 140MB的测试视频可以在这里下载：https://pan.baidu.com/s/1qHNGGpX1QD6zHyNTqWvg1w 提取码: 8ufq 
- 
+
     ```
     capture = cv2.VideoCapture('./video/test.mp4')
     ```
