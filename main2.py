@@ -22,7 +22,7 @@ if __name__ == '__main__':
     detector = Detector()
     # 打开视频
     # capture = cv2.VideoCapture('./video/test.mp4')
-    capture = cv2.VideoCapture(0)
+    capture = cv2.VideoCapture(1)
     start_time = time.time()
     while True:
         _, im = capture.read()
